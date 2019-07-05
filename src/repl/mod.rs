@@ -16,6 +16,7 @@ impl REPL {
             command_buffer: vec![],
         }
     }
+
     fn parse_hex(&mut self, i: &str) -> Result<Vec<u8>, ParseIntError> {
         let split = i.split(" ").collect::<Vec<&str>>();
         let mut results: Vec<u8> = vec![];
@@ -32,6 +33,7 @@ impl REPL {
         }
         Ok(results)
     }
+
     pub fn run(&mut self) {
         loop {
             let mut buffer = String::new();

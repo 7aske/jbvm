@@ -1,15 +1,15 @@
-pub mod vm;
-pub mod repl;
+#[macro_use]
+extern crate nom;
+
+pub mod assembler;
 pub mod instruction;
+pub mod repl;
+pub mod vm;
+
 
 use repl::REPL;
 
 fn main() {
-    // code to add 500 to 255
-    //  let code = vec![1, 0, 0, 12, 7, 0, 0, 0, 0, 0, 0, 0, 200, 0];
-    //  let mut virt_machine = VM::new();
-    //  virt_machine.set_code(&code);
-    //  virt_machine.run();
     let mut repl = REPL::new();
     repl.run();
 }
